@@ -1,0 +1,23 @@
+{
+  "options": {
+    "syntax": "proto3"
+  },
+  "nested": {
+    "SearchRequest": {
+      "fields": {
+        "query": {
+          "type": "string",
+          "id": 1
+        },
+        "pageNumber": {
+          "type": "int32",
+          "id": 2
+        },
+        "resultsPerPage": {
+          "type": "int32",
+          "id": 3
+        }
+      }
+    }
+  }
+}

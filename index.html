@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WebSocket Test</title>
+<script>
+    var ws = new WebSocket("ws://localhost:9002/");
+    ws.onopen = function() {
+        console.log("Connected to the server");
+        ws.send("Please send the proto file"); // Requesting the proto file
+    };
+    ws.onmessage = function(evt) {
+        console.log("Received proto file data:");
+        console.log(evt.data);
+    };
+    ws.onclose = function() {
+        console.log("Connection closed");
+    };
+    ws.onerror = function(err) {
+        console.error("WebSocket error observed:", err);
+    };
+</script>
+</head>
+<body>
+<h1>WebSocket Client</h1>
+<p>Open the console to see the .proto file data received from the server.</p>
+</body>
+</html>
